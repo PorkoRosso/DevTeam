@@ -5,11 +5,12 @@ CREATE TABLE IF NOT EXISTS `Users`
 `FirstName` varchar(255) NOT NULL,
 `user_email` varchar(255) NOT NULL,
 `user_pass` varchar(40) NOT NULL,
+`user_phone` varchar(10) NOT NULL,
 UNIQUE (`user_id`),
 PRIMARY KEY(`user_id`)
 )ENGINE=myISAM;
-INSERT INTO `Users` (user_id, LastName, FirstName, user_email, user_pass) Values
-	('abcd1234', 'asfa', 'asf' , 'abcd1234@colorado.edu', 'abcd1234');
+/**INSERT INTO `Users` (user_id, LastName, FirstName, user_email, user_pass) Values
+	('abcd1234', 'asfa', 'asf' , 'abcd1234@colorado.edu', 'abcd1234');**/
 
 CREATE TABLE IF NOT EXISTS `Categories`
 (
@@ -34,5 +35,5 @@ CREATE TABLE IF NOT EXISTS `Items`
 PRIMARY KEY(`user_id`)
 )ENGINE=myISAM;
 
-INSERT INTO `Items` (user_id, Item_Name, Item_price,  cat_id, For_sale, For_trade) Values
-	('abcd1234', 'aksdjfad', 39.99,  001, 0, 1);
+/**INSERT INTO `Items` (user_id, Item_Name, Item_price,  cat_id, For_sale, For_trade) Values
+	('abcd1234', 'aksdjfad', 39.99,  001, 0, 1);**/
