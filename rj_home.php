@@ -1,4 +1,5 @@
 <!doctype html>
+	<!test push>
 	<html lang="en">
 	<head>
 		<link rel="shortcut icon" href="buff.jpg" type="image/jpg"/>
