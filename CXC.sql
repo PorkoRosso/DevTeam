@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `Items`
 `cat_id` int(1),
 `For_sale` int(1),
 `For_trade` int(1),
+`ipath` varchar(250) NOT NULL, /* Multiple ipath variables for multiple images uploaded*/
 PRIMARY KEY(`user_email`)
 )ENGINE=myISAM;
 
