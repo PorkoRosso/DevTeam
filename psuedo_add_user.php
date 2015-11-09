@@ -1,5 +1,16 @@
 <?php
 function check_param(){
+
+	$con=mysql_connect("localhost","root","");
+	// Check connection
+	if (mysqli_connect_errno()){
+  		echo "Failed to connect to MySQL:";
+  	}
+
+  	$db_selected = mysql_select_db('CXC', $con);
+	if(!$db_selected){
+		echo "Failed to connect to Database</br>";
+	}
 	
 	//Check values initally to see if they are filled in
 	if (empty($_POST['user_first_name'])){
