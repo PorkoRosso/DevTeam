@@ -32,7 +32,7 @@ nav {
 	position: fixed;
 }
 section {
-	top:0px;
+	top:200px;
 	background-image: url('cubr.jpg');
 	background-size:cover; 
 	background-repeat: no-repeat;
@@ -75,13 +75,13 @@ a:link, a:visited {
 }
 
 a:hover, a:focus, a:active {
-    background-color: #1A5A9A;
+    background-color: #DAB00C;
 }
 info{
 	top: 200px;	
 	left: 20%;
-	right: 15%;
-	position: fixed;
+	right: 5%;
+	position: relative;
 	height: 150px;
 	line-height: normal;
 	text-align: justify;
@@ -115,4 +115,44 @@ input[type=text] {
 	top:150px;
 	z-index:0;
 }
+.userpic{
+	height:250px;
+	width:auto;
+	border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+	margin:	3%;
+	position: absolute;
+	float: bottom;
+	left: 20%;
+	top:150px;
+	z-index:0;
+}
+textarea{
+	height:250px;
+	width:auto;
+	border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+	margin:	3%;
+	position: absolute;
+	float: bottom;
+	left: 40%;
+	top:150px;
+	z-index:0;
+	font-size:150%;
+	font-weight: bold;
+    color: black;
+	background-color: #DAB00C;
+}
 
+table#t01 {
+	top: 270px;
+	position: absolute;
+    width: 55%; 
+    background-color: #f1f1c1;
+	left: 75px;
+	border-spacing: 5px;
+	border: 3px solid black;
+}
+th, td {
+    padding: 15px;
+}
