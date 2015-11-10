@@ -4,7 +4,7 @@
 		<link rel="shortcut icon" href="buff.jpg" type="image/jpg"/>
 		<link rel="stylesheet" href="rj_style.css" type="text/css"/>
 		<link href=’http://fonts.googleapis.com/css?family=Droid+Sans’ rel=’stylesheet’ type=’text/css’>
-		<title> User </title>
+		<title> Login </title>
 	</head>
 	<body>
 		<header>
@@ -22,39 +22,17 @@
 			</p>
 		</nav>
 		<section>
-			<img class = "userpic" src = "pr.jpg" alt = "baahhh">
-			<userinfo>
-				Paul Revere
-				<br>Junior
-				<br>CSCI major
-			</userinfo>
-		<info>
-			
-			
-			<table id="t01">
-				<tr>
-					<th>Date Posted</th>
-					<th>Item</th>
-					<th>Trade/Sale</th> 
-					<th>Picture</th>
-					
-				</tr>
-				<tr>
-					<td>11/10/2015</td>
-					<td>dill pickle</td> 
-					<td>sale</td>
-					<td><img src="pickle.jpg" style="width:auto; height:50%;"></td>
-				
-				</tr>
-				<tr>
-					<td>11/20/2015</td>
-					<td>wolverine</td> 
-					<td>trade</td>
-					<td><img src="wolv.jpg" style="width:auto; height:50%;"></td>
-				
-				</tr>
-			</table>
-		</info>
+			<info>
+			<form action="action_page.php">
+				Username:<br>
+				<input type="text" name="user">
+				<br>
+				Password:<br>
+				<input type="password" name="pass">
+				<br><br>
+				<input type="submit" value="Submit">
+			</form>
+			</info>	
 		</section>
 	</body>
 	</html>
