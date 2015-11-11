@@ -1,6 +1,8 @@
 <?php
 function check_param(){
 
+	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
+
 	$con=mysql_connect("localhost","root","");
 	// Check connection
 	if (mysqli_connect_errno()){
