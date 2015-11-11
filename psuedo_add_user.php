@@ -85,4 +85,61 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 		$this->HandleError("Sign up failed!");
 	}
 }
+
+function Login(){
+
+	if (empty($_POST['user_email'])){
+		HandleError("email was left empty!");
+		return false;
+	}	
+
+	if (empty($_POST['user_pass'])){
+		HandleError("password was left empty!");
+		return false;
+	}	
+
+	$password = trim($_POST['user_pass']);
+	$email = trim($_POST['user_email']);
+
+	Checklogin($email, $password);
+	
+
+}
+function Checklogin(){
+
+	//http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
+	$con=mysql_connect("localhost","root","");
+	// Check connection
+	if (mysqli_connect_errno()){
+  		echo "Failed to connect to MySQL:";
+  	}
+
+  	$db_selected = mysql_select_db('CXC', $con);
+	if(!$db_selected){
+		echo "Failed to connect to Database</br>";
+	}
+
+	$query = mysql_query("Select * FROM Users WHERE user_email = '$email'");
+
+	$numRows = mysql_num_rows($query);
+
+	if ($numRows!=0){
+
+  		while ($row = mysql_fetch_assoc($query)){
+    		$dbusername = $row['user_email'];
+    		$dbpassword = $row['user_pass'];
+  		}
+  		else
+      		die("incorrect username/password!");
+	}
+	else
+  		echo "user does not exist!";
+	}
+
+
+
+
+
+
+}
 ?>
