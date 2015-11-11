@@ -87,7 +87,7 @@ info{
 	text-align: justify;
 	font-size: 115%;
 }
-input[type=text] {
+input[type=search] {
 	margin-top: 150px;
     padding: 0;
     height: 30px;
@@ -116,8 +116,8 @@ input[type=text] {
     font-size: 16px;
 }
 form{
-	top: 200px;
-	left: 5px;
+	top: 90px;
+	left: 250px;
 	font-family:"arial black", Helvetica, sans-serif;
 	font-size: inherit;
 	position: absolute;
