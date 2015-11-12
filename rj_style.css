@@ -88,13 +88,12 @@ info{
 	font-size: 115%;
 }
 input[type=search] {
-	margin-top: 150px;
+	top: 200px;
     padding: 0;
     height: 30px;
-    position: fixed;
-    right: 5%;
-    outline: none;
-    border: 1px solid #cdcdcd;
+    position: absolute;
+    left: 35%;
+    border: 2px solid #cdcdcd;
     border-color: rgba(0,0,0,.15);
     background-color: white;
     font-size: 16px;
