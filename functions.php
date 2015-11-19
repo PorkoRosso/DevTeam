@@ -3,16 +3,6 @@ function check_param(){
 
 	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
 
-	$con=mysql_connect("localhost","root","");
-	// Check connection
-	if (mysqli_connect_errno()){
-  		echo "Failed to connect to MySQL:";
-  	}
-
-  	$db_selected = mysql_select_db('CXC', $con);
-	if(!$db_selected){
-		echo "Failed to connect to Database</br>";
-	}
 	
 	//Check values initally to see if they are filled in
 	if (empty($_POST['user_first_name'])){
@@ -27,10 +17,6 @@ function check_param(){
 		$this->HandleError("Password is empty!");
 		return false;
 	}
-	/**if (empty($_POST['user_id'])){
-		$this->HandleError("ID is empty!");
-		return false;
-	}**/
 	if (empty($_POST['user_email'])){
 		$this->HandleError("email was left empty!");
 		return false;
@@ -51,9 +37,9 @@ function check_param(){
 
 	//Validate each entry with separate functions
 	//check_user_name(user_id)
-	check_user_pass(user_pass)
-	check_user_email(user_email)
-	check_user_phone(user_phone)
+	//check_user_pass(user_pass)
+	//check_user_email(user_email)
+	//check_user_phone(user_phone)
 
 	Add_user($userFirstName, $userLastName, $password, $id, $email, $phone);
 }
@@ -61,6 +47,18 @@ function check_param(){
 function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone){
 	//check_param() //each variable will be inputed into this
 	//if everything pass intiate insert into
+	
+	$con=mysql_connect("localhost","root","");
+	// Check connection
+	if (mysqli_connect_errno()){
+  		echo "Failed to connect to MySQL:";
+  	}
+
+  	$db_selected = mysql_select_db('CXC', $con);
+	if(!$db_selected){
+		echo "Failed to connect to Database</br>";
+	}
+	
 	if (!$this->check_param()){
 		$this->HandleError("Sign up failed")
 	}
