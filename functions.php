@@ -5,7 +5,7 @@ function check_param(){
 
 	
 	//Check values initally to see if they are filled in
-if(isset($_POST["submit"])){
+	if(isset($_POST["submit"])){
 		
 		if (empty($_POST['user_first_name'])){
 			echo "Name is empty!";
@@ -62,9 +62,6 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 		echo "Failed to connect to Database</br>";
 	}
 	
-	if (!$this->check_param()){
-		$this->HandleError("Sign up failed");
-	}
 	$userFirstName = $this->SanitizeForSql($userFirstName); //Security risk SQL injections
 	$userFirstName = mysql_real_escape_string($userFirstName); //Allows variable to be inserted into sql
 	$userLastName = $this->SanitizeForSql($userLastName);
@@ -83,7 +80,7 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 
 
 	if(!$adduser){
-		$this->HandleError("Sign up failed!");
+		echo "Sign up failed!";
 	}
 }
 
