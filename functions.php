@@ -60,7 +60,7 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 	}
 	
 	if (!$this->check_param()){
-		$this->HandleError("Sign up failed")
+		$this->HandleError("Sign up failed");
 	}
 	$userFirstName = $this->SanitizeForSql($userFirstName); //Security risk SQL injections
 	$userFirstName = mysql_real_escape_string($userFirstName); //Allows variable to be inserted into sql
