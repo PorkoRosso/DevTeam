@@ -68,7 +68,7 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 	$userLastName = mysql_real_escape_string($userLastName);
 	//$passwordmd5 = md5($password); //raw binary input, probably wont need this during testing
 	$password = SanitizeForSql($password);
-	$password = mysql_real_escape_string($passwordmd5);
+	$password = mysql_real_escape_string($password);
 	$id = SanitizeForSql($id);
 	$id = mysql_real_escape_string($id);
 	$email = SanitizeForSql($email);
