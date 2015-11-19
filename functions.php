@@ -5,43 +5,46 @@ function check_param(){
 
 	
 	//Check values initally to see if they are filled in
-	if (empty($_POST['user_first_name'])){
-		echo "Name is empty!";
-		return false;
-	}
-	if (empty($_POST['user_last_name'])){
-		echo "Name is empty!";
-		return false;
-	}
-	if (empty($_POST['user_pass'])){
-		echo "Password is empty!";
-		return false;
-	}
-	if (empty($_POST['user_email'])){
-		echo "email was left empty!";
-		return false;
-	}	
-	if (empty($_POST['user_phone'])){
-		echo "phone was left empty!";
-		return false;
-	}	
-	//Trim spaces out of each value to ensure difference between "abc123 " and "abc123" and for organization
-	//trim each variable
+if(isset($_POST["submit"])){
+		
+		if (empty($_POST['user_first_name'])){
+			echo "Name is empty!";
+			return false;
+		}
+		if (empty($_POST['user_last_name'])){
+			echo "Name is empty!";
+			return false;
+		}
+		if (empty($_POST['user_pass'])){
+			echo "Password is empty!";
+			return false;
+		}
+		if (empty($_POST['user_email'])){
+			echo "email was left empty!";
+			return false;
+		}	
+		if (empty($_POST['user_phone'])){
+			echo "phone was left empty!";
+			return false;
+		}	
+		//Trim spaces out of each value to ensure difference between "abc123 " and "abc123" and for organization
+		//trim each variable
 
-	$userFirstName = trim($_POST['user_first_name']);
-	$userLastName = trim($_POST['user_last_name']);
-	$password = trim($_POST['user_pass']);
-	$id = trim($_POST['user_id']);
-	$email = trim($_POST['user_email']);
-	$phone = trim($_POST['user_phone']);
+		$userFirstName = trim($_POST['user_first_name']);
+		$userLastName = trim($_POST['user_last_name']);
+		$password = trim($_POST['user_pass']);
+		$id = trim($_POST['user_id']);
+		$email = trim($_POST['user_email']);
+		$phone = trim($_POST['user_phone']);
 
-	//Validate each entry with separate functions
-	//check_user_name(user_id)
-	//check_user_pass(user_pass)
-	//check_user_email(user_email)
-	//check_user_phone(user_phone)
+		//Validate each entry with separate functions
+		//check_user_name(user_id)
+		//check_user_pass(user_pass)
+		//check_user_email(user_email)
+		//check_user_phone(user_phone)
 
-	Add_user($userFirstName, $userLastName, $password, $id, $email, $phone);
+		Add_user($userFirstName, $userLastName, $password, $id, $email, $phone);
+	}
 }
 
 function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone){
