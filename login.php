@@ -30,6 +30,10 @@
 				<br><br>
 				<input type="submit" value="Submit">
 				<input type="submit" value="Sign Up">
+				<?
+					include 'functions.php'
+					Login();
+				?>
 			</form>
 			</info>	
 		</section>
