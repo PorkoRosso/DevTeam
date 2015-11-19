@@ -127,9 +127,10 @@ function Checklogin(){
     		$dbusername = $row['user_email'];
     		$dbpassword = $row['user_pass'];
   		}
-  		else
-      		die("incorrect username/password!");
-	}
+  	}
+	else
+		die("incorrect username/password!");
+	
 	else
   		echo "user does not exist!";
 	}
