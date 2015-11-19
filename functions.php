@@ -62,17 +62,18 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 		echo "Failed to connect to Database</br>";
 	}
 	
-	$userFirstName = $this->SanitizeForSql($userFirstName); //Security risk SQL injections
+	$userFirstName = SanitizeForSql($userFirstName); //Security risk SQL injections
 	$userFirstName = mysql_real_escape_string($userFirstName); //Allows variable to be inserted into sql
-	$userLastName = $this->SanitizeForSql($userLastName);
+	$userLastName = SanitizeForSql($userLastName);
 	$userLastName = mysql_real_escape_string($userLastName);
-	$passwordmd5 = md5($password); //raw binary input, probably wont need this during testing
-	$passwordmd5 = mysql_real_escape_string($passwordmd5);
-	$id = $this->SanitizeForSql($id);
+	//$passwordmd5 = md5($password); //raw binary input, probably wont need this during testing
+	$password = SanitizeForSql($password);
+	$password = mysql_real_escape_string($passwordmd5);
+	$id = SanitizeForSql($id);
 	$id = mysql_real_escape_string($id);
-	$email = $this->SanitizeForSql($email);
+	$email = SanitizeForSql($email);
 	$email = mysql_real_escape_string($email);
-	$phone = $this->SanitizeForSql($phone);
+	$phone = SanitizeForSql($phone);
 	$phone = mysql_real_escape_string($phone);
 
 	$adduser = mysql_query("INSERT INTO `Users` (user_id, LastName, FirstName, user_email, user_pass, user_phone) Values 
