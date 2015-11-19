@@ -134,12 +134,5 @@ function Checklogin(){
   	}
 	else
   		echo "user does not exist!";
-	}
-
-
-
-
-
-
 }
 ?>
