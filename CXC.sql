@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS `Users`
 `user_email` varchar(255) NOT NULL,
 `user_pass` varchar(40) NOT NULL,
 `user_phone` varchar(10) NOT NULL,
+`user_image` varchar(25),
 UNIQUE (`user_email`),
 PRIMARY KEY(`user_email`)
 )ENGINE=myISAM;
@@ -33,7 +34,10 @@ CREATE TABLE IF NOT EXISTS `Items`
 `cat_id` int(1),
 `For_sale` int(1),
 `For_trade` int(1),
-`ipath` varchar(250) NOT NULL, /* Multiple ipath variables for multiple images uploaded, images won't be directley inserted into database,
+`ipath` varchar(250) NOT NULL,
+`ipath1` varchar(250),
+`ipath2` varchar(250),
+ /* Multiple ipath variables for multiple images uploaded, images won't be directley inserted into database,
 instead we will have the path where it is stored on our "server"*/
 PRIMARY KEY(`user_email`)
 )ENGINE=myISAM;
