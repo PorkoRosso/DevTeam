@@ -31,7 +31,7 @@
 				<input type="submit" value="Submit">
 				<input type="submit" value="Sign Up">
 				<?
-					include 'functions.php'
+					include 'functions.php';
 					Login();
 				?>
 			</form>
