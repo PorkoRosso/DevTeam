@@ -87,12 +87,12 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 function Login(){
 
 	if (empty($_POST['user_email'])){
-		HandleError("email was left empty!");
+		//HandleError("email was left empty!");
 		return false;
 	}	
 
 	if (empty($_POST['user_pass'])){
-		HandleError("password was left empty!");
+		//HandleError("password was left empty!");
 		return false;
 	}	
 
