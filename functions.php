@@ -6,23 +6,23 @@ function check_param(){
 	
 	//Check values initally to see if they are filled in
 	if (empty($_POST['user_first_name'])){
-		$this->HandleError("Name is empty!");
+		echo "Name is empty!";
 		return false;
 	}
 	if (empty($_POST['user_last_name'])){
-		$this->HandleError("Name is empty!");
+		echo "Name is empty!";
 		return false;
 	}
 	if (empty($_POST['user_pass'])){
-		$this->HandleError("Password is empty!");
+		echo "Password is empty!";
 		return false;
 	}
 	if (empty($_POST['user_email'])){
-		$this->HandleError("email was left empty!");
+		echo "email was left empty!";
 		return false;
 	}	
 	if (empty($_POST['user_phone'])){
-		$this->HandleError("phone was left empty!");
+		echo "phone was left empty!";
 		return false;
 	}	
 	//Trim spaces out of each value to ensure difference between "abc123 " and "abc123" and for organization
@@ -87,12 +87,12 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 function Login(){
 
 	if (empty($_POST['user_email'])){
-		//HandleError("email was left empty!");
+		echo "email was left empty!";
 		return false;
 	}	
 
 	if (empty($_POST['user_pass'])){
-		//HandleError("password was left empty!");
+		echo "password was left empty!";
 		return false;
 	}	
 
