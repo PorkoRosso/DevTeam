@@ -21,12 +21,12 @@
 		</nav>
 		<section>
 			<info>
-			<form action="action_page.php" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;" 	 >
+			<form action="functions.php" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;" 	 >
 				Username:<br>
-				<input type="text" name="user">
+				<input type="text" name="user_email">
 				<br>
 				Password:<br>
-				<input type="password" name="pass">
+				<input type="password" name="user_pass">
 				<br><br>
 				<input type="submit" value="Submit">
 				<input type="submit" value="Sign Up">
