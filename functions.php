@@ -97,12 +97,13 @@ function Login(){
 			echo "password was left empty!";
 			return false;
 		}
+		$password = trim($_POST['user_pass']);
+		$email = trim($_POST['user_email']);
+
+		Checklogin($email, $password);
 	}	
 
-	$password = trim($_POST['user_pass']);
-	$email = trim($_POST['user_email']);
-
-	Checklogin($email, $password);
+	
 	
 
 }
