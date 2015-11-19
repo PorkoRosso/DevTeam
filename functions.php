@@ -76,7 +76,7 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 	$phone = mysql_real_escape_string($phone);
 
 	$adduser = mysql_query("INSERT INTO `Users` (user_id, LastName, FirstName, user_email, user_pass, user_phone) Values 
-	('$id', '$userLastName', '$userFirstName' , '$email', '$passwordmd5' , '$phone');") 
+	('$id', '$userLastName', '$userFirstName' , '$email', '$passwordmd5' , '$phone');"); 
 
 
 	if(!$adduser){
