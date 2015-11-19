@@ -46,7 +46,7 @@
     							echo $row['Database'] . "<br>";
 							}*/
 							//Select Database
-							$db_selected = mysql_select_db('CampusXChange', $con);
+							$db_selected = mysql_select_db('CXC', $con);
 							if(!$db_selected){
 								echo "Failed to connect to Database</br>";
 							}
