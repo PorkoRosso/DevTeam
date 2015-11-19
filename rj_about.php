@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<header>
-			<center><h1>CU: Ralphies List</h1></center>
+			<a href="rj_home.php">
+				<left><img src="logo.png" style="width:190px;height:90px;border:0;" </left>
+			</a>
 		</header>
 		<input type="text" class="advancedSearchTextBox" />
 		<nav>
