@@ -104,9 +104,6 @@ function Login(){
 		Checklogin($email, $password);
 	}	
 
-	
-	
-
 }
 function Checklogin(){
 
@@ -159,7 +156,7 @@ function upload_item(){
 			echo "password was left empty!";
 			return false;
 		}
-		
+
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
 			echo "File is an image - " . $check["mime"] . ".";
@@ -171,7 +168,12 @@ function upload_item(){
 		}
 
 		$price = trim($_POST['Item_price']);
+		$price = SanitizeForSql($price);
+		$price = mysql_real_escape_string($price);
 		$item = trim($_POST['Item_name']);
+		$item = SanitizeForSql($item);
+		$item = mysql_real_escape_string($item);
+
 	}
 	// Check if file already exists
 	/**if (file_exists($target_file)) {
