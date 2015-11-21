@@ -27,7 +27,7 @@
 				<input type="submit" value="Post Item" name="submit">
 				<?
 					include 'functions.php'
-					add_item();
+					upload_item();
 				?>
 				</form>
 			</form>
