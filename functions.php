@@ -141,21 +141,37 @@ function Checklogin(){
   		echo "user does not exist!";
 }
 //Source: http://www.w3schools.com/php/php_file_upload.asp
-function add_item(){
+//Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
+}
+function upload_item(){
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["submit"])) {
+		if (empty($_POST['Item_price'])){
+			echo "email was left empty!";
+			return false;
+		}	
+
+		if (empty($_POST['Item_name'])){
+			echo "password was left empty!";
+			return false;
+		}
+		
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
 			echo "File is an image - " . $check["mime"] . ".";
 			$uploadOk = 1;
+		
 		} else {
 			echo "File is not an image.";
 			$uploadOk = 0;
 		}
+
+		$price = trim($_POST['Item_price']);
+		$item = trim($_POST['Item_name']);
 	}
 	// Check if file already exists
 	/**if (file_exists($target_file)) {
