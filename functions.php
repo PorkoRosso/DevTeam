@@ -143,7 +143,6 @@ function Checklogin(){
 }
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
-}
 function upload_item(){
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
