@@ -88,15 +88,16 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 function Login(){
 	
 	if(isset($_POST['submit'])){
-
-		$a = $_POST['submit'];
+		$a = $_POST['update'];
 
 		if (empty($_POST['user_email'])){
+			echo $a;
 			echo "email was left empty!";
 			return false;
 		}	
 
 		if (empty($_POST['user_pass'])){
+			echo $a;
 			echo "password was left empty!";
 			return false;
 		}
@@ -111,7 +112,6 @@ function Login(){
 function Checklogin(){
 	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
-	echo $a;
 	$con=mysql_connect("localhost","root","");
 	// Check connection
 	if (mysqli_connect_errno()){
@@ -133,13 +133,15 @@ function Checklogin(){
     		$dbusername = $row['user_email'];
     		$dbpassword = $row['user_pass'];
   		}
-  		if(!$row){
-			die("incorrect username/password!");
+  		if($row){
+
+			echo "successful login!";
 		}
 			
   	}
 	else
-  		echo "user does not exist!";
+		echo $a;
+  		echo "incorrect username/password";
 }
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
