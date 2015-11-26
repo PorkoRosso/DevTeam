@@ -91,15 +91,15 @@ function Login(){
 		
 
 		if (empty($_POST['user_email'])){
-			//$a = $_POST['update'];
-			//echo $a;
+			$a = $_POST['update'];
+			echo $a;
 			echo "email was left empty!";
 			return false;
 		}	
 
 		if (empty($_POST['user_pass'])){
-			//$a = $_POST['update'];
-			//echo $a;
+			$a = $_POST['update'];
+			echo $a;
 			echo "password was left empty!";
 			return false;
 		}
