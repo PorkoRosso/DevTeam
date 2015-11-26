@@ -87,7 +87,10 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 
 function Login(){
 	
-	if(isset($_POST["submit"])){
+	if(isset($_POST['submit'])){
+
+		$a = $_POST['submit'];
+		echo $a;
 
 		if (empty($_POST['user_email'])){
 			echo "email was left empty!";
@@ -98,6 +101,7 @@ function Login(){
 			echo "password was left empty!";
 			return false;
 		}
+		
 		$password = trim($_POST['user_pass']);
 		$email = trim($_POST['user_email']);
 
@@ -106,8 +110,8 @@ function Login(){
 
 }
 function Checklogin(){
-
-	//http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
+	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
+	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
 	$con=mysql_connect("localhost","root","");
 	// Check connection
 	if (mysqli_connect_errno()){
