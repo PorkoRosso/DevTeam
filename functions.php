@@ -90,7 +90,6 @@ function Login(){
 	if(isset($_POST['submit'])){
 
 		$a = $_POST['submit'];
-		echo $a;
 
 		if (empty($_POST['user_email'])){
 			echo "email was left empty!";
@@ -112,6 +111,7 @@ function Login(){
 function Checklogin(){
 	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
+	echo $a;
 	$con=mysql_connect("localhost","root","");
 	// Check connection
 	if (mysqli_connect_errno()){
