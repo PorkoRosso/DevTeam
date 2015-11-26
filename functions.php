@@ -88,15 +88,17 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 function Login(){
 	
 	if(isset($_POST['submit'])){
-		$a = $_POST['update'];
+		
 
 		if (empty($_POST['user_email'])){
+			$a = $_POST['update'];
 			echo $a;
 			echo "email was left empty!";
 			return false;
 		}	
 
 		if (empty($_POST['user_pass'])){
+			$a = $_POST['update'];
 			echo $a;
 			echo "password was left empty!";
 			return false;
@@ -140,6 +142,7 @@ function Checklogin(){
 			
   	}
 	else
+		$a = $_POST['update'];
 		echo $a;
   		echo "incorrect username/password";
 }
