@@ -21,7 +21,7 @@
 		</nav>
 		<section>
 			<info>
-			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;">
+			<form action="functions.php" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;">
 				Username:<br>
 				<input type="text" name="user_email">
 				<br>
