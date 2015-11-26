@@ -142,8 +142,8 @@ function Checklogin(){
 			
   	}
 	else
-		$a = $_POST['update'];
-		echo $a;
+		//$a = $_POST['update'];
+		//echo $a;
   		echo "incorrect username/password";
 }
 //Source: http://www.w3schools.com/php/php_file_upload.asp
