@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<header>
-			<center><h1>Ralphies Junk</h1></center>
+			<a href="rj_home.php">
+				<left><img src="logo.png" style="width:190px;height:70px;border:0;" </left>
+			</a>
 		</header>
 		<input type="text" class="advancedSearchTextBox" />
 		<nav>
