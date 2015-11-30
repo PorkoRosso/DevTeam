@@ -125,6 +125,11 @@ function Checklogin(){
 		echo "Failed to connect to Database</br>";
 	}
 
+	$email = SanitizeForSql($email);
+	$email = mysql_real_escape_string($email);
+	$password = SanitizeForSql($password);
+	$password = mysql_real_escape_string($password);
+ 
 	$query = mysql_query("Select * FROM Users WHERE user_email = '$email'");
 
 	$numRows = mysql_num_rows($query);
