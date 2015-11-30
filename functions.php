@@ -132,7 +132,8 @@ function Checklogin($email, $password){
 
   		while ($row = mysql_fetch_assoc($query)){
   			if($email == $row['user_email'] && $password == $row['user_pass']){
-  				echo "successful login!";
+  				//echo "successful login!";
+  				header('Location: rj_home.php');  
   				$login_success = true;
   			}
     		
