@@ -21,7 +21,11 @@
 		</nav>
 		<section>
 			<info>
-			<form action="functions.php" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;">
+			<?
+				include 'functions.php';
+				Login();
+			?>
+			<form method = "post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;">
 				Username:<br>
 				<input type="text" name="user_email">
 				<br>
@@ -30,10 +34,6 @@
 				<br><br>
 				<input type="submit" value="Submit">
 				<input type="submit" value="Sign Up">
-				<?
-					include 'functions.php';
-					Login();
-				?>
 			</form>
 			</info>	
 		</section>
