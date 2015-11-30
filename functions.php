@@ -88,19 +88,18 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 function Login(){
 	
 	if(isset($_POST['go'])){
-		echo "test";
-		$a = $_POST['update'];
-		echo $a;
+		//echo "test";
+		//$a = $_POST['update'];
+		//echo $a;
 
 		if (empty($_POST['user_email'])){
-			
 			echo "email was left empty!";
 			return false;
 		}	
 
 		if (empty($_POST['user_pass'])){
-			$a = $_POST['update'];
-			echo $a;
+			//$a = $_POST['update'];
+			//echo $a;
 			echo "password was left empty!";
 			return false;
 		}
