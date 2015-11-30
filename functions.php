@@ -111,7 +111,7 @@ function Login(){
 	}	
 
 }
-function Checklogin(){
+function Checklogin($email, $password){
 	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
 	$con=mysql_connect("localhost","root","");
