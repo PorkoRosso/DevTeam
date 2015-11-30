@@ -91,16 +91,20 @@ function Login(){
 		//echo "test";
 		//$a = $_POST['update'];
 		//echo $a;
+		if(empty($_POST['user_email']) && empty($_POST['user_pass'])){
+			echo "An email and a password are required!";
+			return false;
+		}
 
 		if (empty($_POST['user_email'])){
-			echo "email was left empty!";
+			echo "An email is required!";
 			return false;
 		}	
 
 		if (empty($_POST['user_pass'])){
 			//$a = $_POST['update'];
 			//echo $a;
-			echo "password was left empty!";
+			echo "A password is required!";
 			return false;
 		}
 		
@@ -133,21 +137,20 @@ function Checklogin($email, $password){
 	$query = mysql_query("Select * FROM Users WHERE user_email = '$email'");
 
 	$numRows = mysql_num_rows($query);
+	$login_success = false;
 
 	if ($numRows!=0){
 
   		while ($row = mysql_fetch_assoc($query)){
-    		$email = $row['user_email'];
-    		$password = $row['user_pass'];
+  			if($email == $row['user_email'] && $password == $row['user_pass']){
+  				echo "successful login!";
+  				$login_success = true;
+  			}
+    		
   		}
-  		if($row){
-
-			echo "successful login!";
-		}
-		else
-		//$a = $_POST['update'];
-		//echo $a;
-  		echo "incorrect username/password";	
+		if(!$login_success){
+  			echo "incorrect username/password";	
+  		}
   	}
 	
 }
