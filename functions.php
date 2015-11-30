@@ -137,8 +137,8 @@ function Checklogin($email, $password){
 	if ($numRows!=0){
 
   		while ($row = mysql_fetch_assoc($query)){
-    		$dbusername = $row['user_email'];
-    		$dbpassword = $row['user_pass'];
+    		$email = $row['user_email'];
+    		$password = $row['user_pass'];
   		}
   		if($row){
 
