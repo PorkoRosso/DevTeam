@@ -32,7 +32,7 @@
 				Password:<br>
 				<input type="password" name="user_pass">
 				<br><br>
-				<input type="submit" value="Submit">
+				<input name = "go" type="submit" value="Submit">
 				<input type="submit" value="Sign Up">
 			</form>
 			</info>	
