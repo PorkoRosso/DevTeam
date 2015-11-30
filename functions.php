@@ -33,7 +33,6 @@ function check_param(){
 		$userFirstName = trim($_POST['user_first_name']);
 		$userLastName = trim($_POST['user_last_name']);
 		$password = trim($_POST['user_pass']);
-		$id = trim($_POST['user_id']);
 		$email = trim($_POST['user_email']);
 		$phone = trim($_POST['user_phone']);
 
@@ -43,11 +42,11 @@ function check_param(){
 		//check_user_email(user_email)
 		//check_user_phone(user_phone)
 
-		Add_user($userFirstName, $userLastName, $password, $id, $email, $phone);
+		Add_user($userFirstName, $userLastName, $password, $email, $phone);
 	}
 }
 
-function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone){
+function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	//check_param() //each variable will be inputed into this
 	//if everything pass intiate insert into
 	
