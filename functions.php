@@ -173,10 +173,8 @@ function upload_item(){
 		}
 
 		$price = trim($_POST['Item_price']);
-		$price = SanitizeForSql($price);
 		$price = mysql_real_escape_string($price);
 		$item = trim($_POST['Item_name']);
-		$item = SanitizeForSql($item);
 		$item = mysql_real_escape_string($item);
 
 	}
