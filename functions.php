@@ -87,7 +87,8 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 
 function Login(){
 	
-	if(isset($_POST['Submit'])){
+	if(isset($_POST['submit'])){
+		echo "test";
 		$a = $_POST['update'];
 		echo $a;
 
