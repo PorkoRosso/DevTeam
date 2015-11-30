@@ -114,7 +114,6 @@ function Login(){
 function Checklogin($email, $password){
 	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
-	echo "test";
 	$con=mysql_connect("localhost","root","");
 	// Check connection
 	if (mysqli_connect_errno()){
@@ -145,12 +144,12 @@ function Checklogin($email, $password){
 
 			echo "successful login!";
 		}
-			
-  	}
-	else
+		else
 		//$a = $_POST['update'];
 		//echo $a;
-  		echo "incorrect username/password";
+  		echo "incorrect username/password";	
+  	}
+	
 }
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
