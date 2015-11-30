@@ -82,9 +82,6 @@ function Add_user($userFirstName, $userLastName, $password, $id, $email, $phone)
 function Login(){
 	
 	if(isset($_POST['go'])){
-		//echo "test";
-		//$a = $_POST['update'];
-		//echo $a;
 		if(empty($_POST['user_email']) && empty($_POST['user_pass'])){
 			echo "An email and a password are required!";
 			return false;
@@ -96,8 +93,6 @@ function Login(){
 		}	
 
 		if (empty($_POST['user_pass'])){
-			//$a = $_POST['update'];
-			//echo $a;
 			echo "A password is required!";
 			return false;
 		}
