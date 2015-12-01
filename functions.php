@@ -1,4 +1,12 @@
 <?php
+
+//posibly use regex code below to test @colorado.edu email
+
+/*$name = test_input($_POST["name"]);
+if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+  $nameErr = "Only letters and white space allowed"; 
+} */
+
 function check_param(){
 
 	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
