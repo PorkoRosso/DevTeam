@@ -76,7 +76,7 @@ a:link, a:visited {
 }
 
 a:hover, a:focus, a:active {
-    background-color: #DAB00C;
+    background-color: #cfb87b;
 }
 info{
 	top: 200px;	
@@ -149,7 +149,8 @@ userinfo{
 	font-size:150%;
 	font-weight: bold;
     color: black;
-	background-color: #ffd700;
+	background-color:#cfb87b; 
+	/*#ffd700;*/
 	text-align: left;
 	padding: 10px 0  0 30px;
 }

@@ -12,9 +12,9 @@
 		</header>
 		<nav>
 			<ul>
-				<li><a href="rj_user.html">Home</a></li>
-				<li><a href="rj_browse.html">Browse</a></li>
-				<li><a href="rj_login.html">Login</a></li>
+				<li><a href="rj_user.php">Home</a></li>
+				<li><a href="rj_browse.php">Browse</a></li>
+				<li><a href="login.php">Login</a></li>
 				<li><a href="http://www.google.com">Google</a></li>
 			</ul>
 			</p>
@@ -25,7 +25,7 @@
 				include 'functions.php';
 				Login();
 			?>
-			<form method = "post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="border: 3px solid #101417; background-color: #f1f1c1; padding: 25px 70px 25px 70px;">
+			<form method = "post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="border: 3px solid #101417; background-color: #cfb87b; padding: 25px 70px 25px 70px;">
 				Username:<br>
 				<input type="text" name="user_email">
 				<br>
