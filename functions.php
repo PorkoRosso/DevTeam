@@ -106,10 +106,10 @@ function Login(){
 function Checklogin($email, $password){
 	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
-	$con=mysql_connect("localhost","root","");
+	$con=mysql_connect("localhost","root","root");
 	// Check connection
 	if (mysqli_connect_errno()){
-  		echo "Failed to connect to MySQL:";
+  		echo "Failed to connect to MySQL";
   	}
 
   	$db_selected = mysql_select_db('CXC', $con);
@@ -131,8 +131,8 @@ function Checklogin($email, $password){
 
   		while ($row = mysql_fetch_assoc($query)){
   			if($email == $row['user_email'] && $password == $row['user_pass']){
-  				//echo "successful login!";
-  				header('Location: rj_user.php');  
+  				echo "successful login!";
+  				//header('Location: rj_user.php');  
   				$login_success = true;
   			}
     		
