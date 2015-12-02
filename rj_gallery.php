@@ -1,7 +1,7 @@
 <!doctype html>
 	<html lang="en">
 	<head>
-		<link rel="shortcut icon" href="buff.jpg" type="image/jpg"/>
+		<link rel="shortcut icon" href="pics/buff.jpg" type="image/jpg"/>
 		<link rel="stylesheet" href="rj_style.css" type="text/css"/>
 		<link href=’http://fonts.googleapis.com/css?family=Droid+Sans’ rel=’stylesheet’ type=’text/css’>
 		<title> Gallery </title>
@@ -14,10 +14,10 @@
 		<nav>
 			<p> <b>These are my favorite links:</b>
 			<ul>
-				<li><a href="rj_home.php">Home</a></li>
+				<li><a href="rj_user.php">Home</a></li>
+				<li><a href="rj_browse.php">Browse</a></li>
+				<li><a href="login.php">Login</a></li>
 				<li><a href="rj_about.php">About</a></li>
-				<li><a href="rj_gallery.php">Gallery</a></li>
-				<li><a href="http://www.computerhope.com">Computer Hope</a></li>
 				<li><a href="http://www.google.com">Google</a></li>
 			</ul>
 			</p>

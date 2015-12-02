@@ -8,7 +8,7 @@ body {
 }
 
 header { 
-	background-image: url('head.jpg');
+	background-image: url('pics/head.jpg');
     background-repeat: no-repeat;
 	background-size: 100% 100%;
 	width: 100%;
@@ -33,7 +33,7 @@ nav {
 }
 section {
 	top:200px;
-	background-image: url('cubr.jpg');
+	background-image: url('pics/cubr.jpg');
 	background-size:cover; 
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
