@@ -1,9 +1,6 @@
 <?php
 function check_param(){
-
 	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
-
-	
 	//Check values initally to see if they are filled in
 	if(isset($_POST["submit"])){
 		
@@ -56,7 +53,7 @@ function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	//check_param() //each variable will be inputed into this
 	//if everything pass intiate insert into
 	
-	$con=mysql_connect("localhost","root","");
+	$con=mysql_connect("localhost","root","root");
 	// Check connection
 	if (mysqli_connect_errno()){
   		echo "Failed to connect to MySQL:";
@@ -90,7 +87,7 @@ function Login(){
 		if(empty($_POST['user_email']) && empty($_POST['user_pass'])){
 			
 			echo "An email and a password are required!";
-			$page = $_SERVER['PHP_SELF'];
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
 			header("Refresh: $sec; url=$page");
 			return false;
@@ -110,7 +107,7 @@ function Login(){
 			echo "A password is required!";
 			$page = $_SERVER['PHP_SELF'];
 			$sec = "0";
-			header("Refresh: $sec; url=$page");
+			header("Refresh: $sec; url=$page"); //Redirects to "user profile"
 			return false;
 		}
 		
@@ -223,10 +220,16 @@ function upload_item(){
 	} else {
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+			//This is where query will go
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
-	}
-	
+	}	
 }
+function Display(); //will take in image path
+function search_Item(){
+	//if match is found call Display function
+	return;
+}
+function Disaply_home();
 ?>
