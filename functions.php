@@ -127,7 +127,7 @@ function Checklogin($email, $password){
 	$con=mysql_connect("localhost","root","root");
 	// Check connection
 	if (mysqli_connect_errno()){
-  		echo "Failed to connect to MySQL";
+  		//echo "Failed to connect to MySQL";
   	}
 
   	$db_selected = mysql_select_db('CXC', $con);
@@ -151,7 +151,7 @@ function Checklogin($email, $password){
   			if($email == $row['user_email'] && $password == $row['user_pass']){
   				//echo "successful login!";
   				$login_success = true;
-  				break;
+  				//break;
   			}
     		
   		}
@@ -159,7 +159,8 @@ function Checklogin($email, $password){
   			echo "incorrect username/password";	
   		}
   		else{
-  			header('Location: localhost:8888/rj_user.php'); 
+  			echo "<script type='text/javascript'>window.top.location='http://localhost:8888/rj_user.php';</script>"; 
+  			exit();
   		}
   	}
 	
