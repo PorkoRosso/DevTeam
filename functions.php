@@ -1,12 +1,4 @@
 <?php
-
-//posibly use regex code below to test @colorado.edu email
-
-/*$name = test_input($_POST["name"]);
-if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-  $nameErr = "Only letters and white space allowed"; 
-} */
-
 function check_param(){
 
 	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
@@ -53,6 +45,12 @@ function check_param(){
 		Add_user($userFirstName, $userLastName, $password, $email, $phone);
 	}
 }
+//posibly use regex code below to test @colorado.edu email
+
+/*$name = test_input($_POST["name"]);
+if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+  $nameErr = "Only letters and white space allowed"; 
+} */
 
 function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	//check_param() //each variable will be inputed into this
@@ -90,17 +88,29 @@ function Login(){
 	
 	if(isset($_POST['go'])){
 		if(empty($_POST['user_email']) && empty($_POST['user_pass'])){
+			
 			echo "An email and a password are required!";
+			$page = $_SERVER['PHP_SELF'];
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}
 
 		if (empty($_POST['user_email'])){
+			
 			echo "An email is required!";
+			$page = $_SERVER['PHP_SELF'];
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}	
 
 		if (empty($_POST['user_pass'])){
+			
 			echo "A password is required!";
+			$page = $_SERVER['PHP_SELF'];
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}
 		
@@ -139,14 +149,17 @@ function Checklogin($email, $password){
 
   		while ($row = mysql_fetch_assoc($query)){
   			if($email == $row['user_email'] && $password == $row['user_pass']){
-  				echo "successful login!";
-  				//header('Location: rj_user.php');  
+  				//echo "successful login!";
   				$login_success = true;
+  				break;
   			}
     		
   		}
 		if(!$login_success){
   			echo "incorrect username/password";	
+  		}
+  		else{
+  			header('Location: localhost:8888/rj_user.php'); 
   		}
   	}
 	
