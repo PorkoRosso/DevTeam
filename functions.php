@@ -180,7 +180,7 @@ function Checklogin($email, $password){
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
 function upload_item(){
-	$target_dir = "uploads/";
+	$target_dir = "/Users/Ameya/Dropbox/CSCI3308/Project";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
