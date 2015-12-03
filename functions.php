@@ -6,22 +6,37 @@ function check_param(){
 		
 		if (empty($_POST['user_first_name'])){
 			echo "Name is empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}
 		if (empty($_POST['user_last_name'])){
 			echo "Name is empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}
 		if (empty($_POST['user_pass'])){
 			echo "Password is empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}
 		if (empty($_POST['user_email'])){
 			echo "email was left empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}	
 		if (empty($_POST['user_phone'])){
 			echo "phone was left empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}	
 		//Trim spaces out of each value to ensure difference between "abc123 " and "abc123" and for organization
