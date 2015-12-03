@@ -59,7 +59,7 @@ footer {
 }
 li{
 	display: inline-flex;
-	padding: 20px 10px 8px 50px;
+	padding: 20px 10px 8px 26px;
 	text-decoration: none;
 }
 a:link, a:visited {
@@ -68,8 +68,7 @@ a:link, a:visited {
     font-weight: bold;
     color: #ffffff;
     background-color: #101417;
-	/*#98bf21;  green, #60affe blue,  #7A991A swampy green  slate:#2c3539*/
-    width: 120px;
+    width: 180px;
     text-align: center;
     padding: 4px;
     text-decoration: none;
