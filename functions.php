@@ -179,13 +179,13 @@ function Checklogin($email, $password){
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
 function upload_item(){
-	$target_dir = "/Users/Ameya/Dropbox/CSCI3308/Project";
+	$target_dir = "/Users/Ameya/Dropbox/CSCI3308/Project/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["submit"])) {
-		if (empty($_POST['Item_price'])){
+		/**if (empty($_POST['Item_price'])){
 			echo "Item price left empty!";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
@@ -199,11 +199,11 @@ function upload_item(){
 			$sec = "0";
 			header("Refresh: $sec; url=$page");
 			return false;
-		}
+		}**/
 
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
-			echo "File is an image - " . $check["mime"] . ".";
+			//echo "File is an image - " . $check["mime"] . ".";
 			$uploadOk = 1;
 		
 		} else {
@@ -234,7 +234,7 @@ function upload_item(){
 			$uploadOk = 0;
 		}
 		// Allow certain file formats
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+		else if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 		&& $imageFileType != "gif" ) {
 			echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
@@ -243,7 +243,7 @@ function upload_item(){
 			$uploadOk = 0;
 		}
 		// Check if $uploadOk is set to 0 by an error
-		if ($uploadOk == 0) {
+		else if ($uploadOk == 0) {
 			echo "Sorry, your file was not uploaded.";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
