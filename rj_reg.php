@@ -20,17 +20,13 @@
 		</nav>
 		<section>
 			<info>
-			<p><span class="error">* required field.</span></p>
 
 			<form method="post" style="border: 3px solid #101417; background-color: #cfb87b; padding: 25px 70px 25px 70px;">
 			Name: <input type="text" name="name">
-			<span class="error">* <?php echo $nameErr;?></span>
 			<br><br>
 			E-mail: <input type="text" name="email">
-			<span class="error">* <?php echo $emailErr;?></span>
 			<br><br>
 			Website: <input type="text" name="website">
-			<span class="error"><?php echo $websiteErr;?></span>
 			<br><br>
 			<input type="submit" name="submit" value="Submit">
 			</form>
