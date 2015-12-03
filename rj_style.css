@@ -115,15 +115,15 @@ input[type=password]{
 }
 
 form{
-	top: 90px;
-	left: 15%;
+	top: 50px;
+	left: 25%;
 	font-family:"arial black", Helvetica, sans-serif;
 	font-size: inherit;
 	position: absolute;
-	padding: 10%;
-	width: 28%;
+	width: 250px;
 
 }
+
 .userpic{
 	height:250px;
 	width:auto;
