@@ -35,7 +35,7 @@
 			<input type="submit" name="submit" value="Submit">
 			</form>
 			<?
-				include 'functions.php'
+				include 'functions.php';
 				check_param();
 			?>
 			</info>

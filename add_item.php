@@ -28,7 +28,7 @@
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				<input type="submit" value="Post Item" name="submit">
 				<?
-					include 'functions.php'
+					include 'functions.php';
 					upload_item();
 				?>
 			</form>
