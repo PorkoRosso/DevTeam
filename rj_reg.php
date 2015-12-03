@@ -22,11 +22,15 @@
 			<info>
 
 			<form method="post" style="border: 3px solid #101417; background-color: #cfb87b; padding: 25px 70px 25px 70px;">
-			Name: <input type="text" name="name">
+			First Name: <input type="text" name="user_first_name">
 			<br><br>
-			E-mail: <input type="text" name="email">
+			Last Name: <input type="text" name="user_last_name">
 			<br><br>
-			Website: <input type="text" name="website">
+			Phone Number: <input type="text" name="user_phone">
+			<br><br>
+			E-mail: <input type="text" name="user_email">
+			<br><br>
+			Password: <input type="password" name="user_pass">
 			<br><br>
 			<input type="submit" name="submit" value="Submit">
 			</form>
