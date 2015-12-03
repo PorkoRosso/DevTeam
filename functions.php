@@ -226,10 +226,10 @@ function upload_item(){
 		}
 	}	
 }
-function Display(); //will take in image path
-function search_Item(){
+//function Display(); //will take in image path
+//function search_Item(){
 	//if match is found call Display function
-	return;
+	//return;
 }
-function Disaply_home();
+//function Disaply_home();
 ?>
