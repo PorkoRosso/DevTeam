@@ -141,7 +141,6 @@ function Checklogin($email, $password){
 	if (mysqli_connect_errno()){
   		//echo "Failed to connect to MySQL";
   	}
-
   	$db_selected = mysql_select_db('CXC', $con);
 	if(!$db_selected){
 		echo "Failed to connect to Database</br>";
@@ -245,6 +244,6 @@ function upload_item(){
 //function search_Item(){
 	//if match is found call Display function
 	//return;
-}
+//}
 //function Disaply_home();
 ?>
