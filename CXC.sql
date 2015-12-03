@@ -35,8 +35,6 @@ CREATE TABLE IF NOT EXISTS `Items`
 `For_sale` int(1),
 `For_trade` int(1),
 `ipath` varchar(250) NOT NULL,
-`ipath1` varchar(250),
-`ipath2` varchar(250),
  /* Multiple ipath variables for multiple images uploaded, images won't be directley inserted into database,
 instead we will have the path where it is stored on our "server"*/
 PRIMARY KEY(`user_email`)
