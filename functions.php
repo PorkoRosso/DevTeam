@@ -94,6 +94,9 @@ function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	if(!$adduser){
 		echo "Sign up failed!";
 	}
+	else{
+		echo "<script type='text/javascript'>window.top.location='http://localhost:8888/login.php';</script>";
+	}
 }
 
 function Login(){
