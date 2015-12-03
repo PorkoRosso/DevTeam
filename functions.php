@@ -186,12 +186,18 @@ function upload_item(){
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["submit"])) {
 		if (empty($_POST['Item_price'])){
-			echo "email was left empty!";
+			echo "Item price left empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}	
 
 		if (empty($_POST['Item_name'])){
-			echo "password was left empty!";
+			echo "Item name was left empty!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			return false;
 		}
 
@@ -202,6 +208,9 @@ function upload_item(){
 		
 		} else {
 			echo "File is not an image.";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			$uploadOk = 0;
 		}
 
@@ -219,17 +228,26 @@ function upload_item(){
 		// Check file size
 		if ($_FILES["fileToUpload"]["size"] > 500000) {
 			echo "Sorry, your file is too large.";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			$uploadOk = 0;
 		}
 		// Allow certain file formats
 		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 		&& $imageFileType != "gif" ) {
 			echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 			$uploadOk = 0;
 		}
 		// Check if $uploadOk is set to 0 by an error
 		if ($uploadOk == 0) {
 			echo "Sorry, your file was not uploaded.";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
 		// if everything is ok, try to upload file
 		} else {
 			if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
