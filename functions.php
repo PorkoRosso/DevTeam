@@ -188,7 +188,15 @@ function upload_item(){
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["submit"])) {
-		/**if (empty($_POST['Item_price'])){
+		if(empty($_POST['Item_price']) && empty($_POST['Item_name'])){
+			
+			echo "A name and price are required!";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
+			return false;
+		}
+		else if (empty($_POST['Item_price'])){
 			echo "Item price left empty!";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
@@ -196,13 +204,13 @@ function upload_item(){
 			return false;
 		}	
 
-		if (empty($_POST['Item_name'])){
+		else if (empty($_POST['Item_name'])){
 			echo "Item name was left empty!";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
 			header("Refresh: $sec; url=$page");
 			return false;
-		}**/
+		}
 
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
