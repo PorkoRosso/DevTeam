@@ -23,6 +23,8 @@
 			<form method="post" enctype="multipart/form-data" style= "left: 250px; width: 200px;border: 3px solid #101417; background-color: #cfb87b; padding: 25px 70px 25px 70px;"	>
 				Select image to upload:
 				<input type="file" name="fileToUpload" id="fileToUpload">
+				Item Name: <br><input type ="text" name = "Item_name"><br>
+				Item Price: <br><input type = "text" name = "Item_price">
 				<input type="submit" value="Post Item" name="submit">
 				<?
 					include 'functions.php';
