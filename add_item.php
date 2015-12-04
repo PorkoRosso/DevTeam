@@ -24,7 +24,7 @@
 				Select image to upload:
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				Item Name: <br><input type ="text" name = "Item_name"><br>
-				Item Price: <br><input type = "text" name = "Item_price">
+				Item Price: <br><input type = "text" name = "Item_price"><br>
 				<input type="submit" value="Post Item" name="submit">
 				<?
 					include 'functions.php';
