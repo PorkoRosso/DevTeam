@@ -48,21 +48,9 @@ function check_param(){
 		$email = trim($_POST['user_email']);
 		$phone = trim($_POST['user_phone']);
 
-		//Validate each entry with separate functions
-		//check_user_name(user_id)
-		//check_user_pass(user_pass)
-		//check_user_email(user_email)
-		//check_user_phone(user_phone)
-
 		Add_user($userFirstName, $userLastName, $password, $email, $phone);
 	}
 }
-//posibly use regex code below to test @colorado.edu email
-
-/*$name = test_input($_POST["name"]);
-if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-  $nameErr = "Only letters and white space allowed"; 
-} */
 
 function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	//check_param() //each variable will be inputed into this
@@ -242,13 +230,6 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			return false;
 		}
-		/**if(!(IsChecked('For_sale', 'A') && IsChecked('For_trade', 'B')){
-			echo "Please choose whether you want to trade and/or sell the item(s).";
-			$page = $_SERVER['PHP_SELF']; //Refreshes page
-			$sec = "0";
-			header("Refresh: $sec; url=$page");
-			return false;
-		}**/
 		if(IsChecked('For_trade', 'B')){
 			$ForTrade = 1;
 		}
@@ -274,12 +255,6 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			$uploadOk = 0;
 		}
-	
-		// Check if file already exists
-		/**if (file_exists($target_file)) {
-			echo "Sorry, file already exists."; //Don't need this in final implimentation
-			$uploadOk = 0;
-		}**/
 		// Check file size
 		if ($_FILES["fileToUpload"]["size"] > 500000) {
 			echo "Sorry, your file is too large.";
@@ -312,10 +287,6 @@ function upload_item(){
 				$price = trim($_POST['Item_price']);
 				$item = trim($_POST['Item_name']);
 				$item = mysql_real_escape_string($item);
-				//$ForTrade = mysql_real_escape_string($ForTrade);
-				//$ForSale = mysql_real_escape_string($ForSale);
-				//$imagePath = trim($target_file);
-				//$imagePath = mysql_real_escape_string($imagePath);
 				//This is where query will go
 				$addItem = mysql_query("INSERT INTO `Items` (user_email, Item_Name, Item_price, For_sale, For_trade, ipath) Values 
 	('$email', '$item' , '$price', '$ForSale' , '$ForTrade' , '$target_file');"); 
