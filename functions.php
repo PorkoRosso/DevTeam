@@ -196,6 +196,14 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			return false;
 		}
+		if (empty($_POST['user_email'])){
+			
+			echo "An email is required!";
+			$page = $_SERVER['PHP_SELF'];
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
+			return false;
+		}	
 		else if (empty($_POST['Item_price'])){
 			echo "Item price left empty!";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
@@ -224,12 +232,6 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			$uploadOk = 0;
 		}
-
-		$price = trim($_POST['Item_price']);
-		$price = mysql_real_escape_string($price);
-		$item = trim($_POST['Item_name']);
-		$item = mysql_real_escape_string($item);
-
 	
 		// Check if file already exists
 		/**if (file_exists($target_file)) {
@@ -263,7 +265,15 @@ function upload_item(){
 		} else {
 			if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 				echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+				$email = trim($_POST['user_email']);
+				$email - mysql_real_escape_string($email);
+				$price = trim($_POST['Item_price']);
+				$price = mysql_real_escape_string($price);
+				$item = trim($_POST['Item_name']);
+				$item = mysql_real_escape_string($item);
 				//This is where query will go
+				$addItem = mysql_query("INSERT INTO `Items` (user_email, Item_Name, Item_price, For_sale, For_trade) Values 
+	('$userLastName', '$userFirstName' , '$email', '$password' , '$phone');"); 
 			} else {
 				echo "Sorry, there was an error uploading your file.";
 			}
