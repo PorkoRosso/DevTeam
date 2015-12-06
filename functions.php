@@ -236,6 +236,13 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			return false;
 		}
+		else if(!IsChecked('For_sale', 'A') && !IsChecked('For_trade', 'B')){
+			echo "Please choose whether you want to trade and/or sell the item(s).";
+			$page = $_SERVER['PHP_SELF']; //Refreshes page
+			$sec = "0";
+			header("Refresh: $sec; url=$page");
+			return false;
+		}
 
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
