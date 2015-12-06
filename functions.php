@@ -199,6 +199,17 @@ function IsChecked($chkname,$value)
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
 function upload_item(){
+
+	$con=mysql_connect("localhost","root","root");
+	// Check connection
+	if (mysqli_connect_errno()){
+  		//echo "Failed to connect to MySQL";
+  	}
+  	$db_selected = mysql_select_db('CXC', $con);
+	if(!$db_selected){
+		echo "Failed to connect to Database</br>";
+	}
+
 	$target_dir = "/Users/Ameya/Dropbox/CSCI3308/Project/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
@@ -206,7 +217,6 @@ function upload_item(){
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["submit"])) {
 		if(empty($_POST['Item_price']) && empty($_POST['Item_name'])){
-			
 			echo "A name and price are required!";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
@@ -236,13 +246,13 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			return false;
 		}
-		else if(!IsChecked('For_sale', 'A') && !IsChecked('For_trade', 'B')){
+		/**if(!(IsChecked('For_sale', 'A') && IsChecked('For_trade', 'B')){
 			echo "Please choose whether you want to trade and/or sell the item(s).";
 			$page = $_SERVER['PHP_SELF']; //Refreshes page
 			$sec = "0";
 			header("Refresh: $sec; url=$page");
 			return false;
-		}
+		}**/
 		if(IsChecked('For_trade', 'B')){
 			$ForTrade = 1;
 		}
@@ -255,6 +265,7 @@ function upload_item(){
 		else{
 			$ForSale = 0;
 		}
+		
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
 			//echo "File is an image - " . $check["mime"] . ".";
@@ -299,20 +310,26 @@ function upload_item(){
 		// if everything is ok, try to upload file
 		} else {
 			if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-				echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+				//echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 				$email = trim($_POST['user_email']);
 				$email - mysql_real_escape_string($email);
 				$price = trim($_POST['Item_price']);
-				$price = mysql_real_escape_string($price);
 				$item = trim($_POST['Item_name']);
 				$item = mysql_real_escape_string($item);
-				$ForTrade = mysql_real_escape_string($ForTrade);
-				$ForSale = mysql_real_escape_string($ForSale);
-				$imagePath = trim($target_file);
-				$imagePath = mysql_real_escape_string($imagePath);
+				//$ForTrade = mysql_real_escape_string($ForTrade);
+				//$ForSale = mysql_real_escape_string($ForSale);
+				//$imagePath = trim($target_file);
+				//$imagePath = mysql_real_escape_string($imagePath);
 				//This is where query will go
 				$addItem = mysql_query("INSERT INTO `Items` (user_email, Item_Name, Item_price, For_sale, For_trade, ipath) Values 
-	('$email', '$item' , '$price', '$For_sale' , '$For_trade' , 'imagePath');"); 
+	('$email', '$item' , '$price', '$ForSale' , '$ForTrade' , '$target_file');"); 
+				if(!$addItem){
+					echo "Error uploading Item";
+
+				}
+				else{
+					echo "Item uploaded!";
+				}
 			} else {
 				echo "Sorry, there was an error uploading your file.";
 			}
