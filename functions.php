@@ -179,6 +179,23 @@ function Checklogin($email, $password){
   	}
 	
 }
+//Source: http://www.html-form-guide.com/php-form/php-form-checkbox.html
+function IsChecked($chkname,$value)
+    {
+        if(!empty($_POST[$chkname]))
+        {
+            foreach($_POST[$chkname] as $chkval)
+            {
+                if($chkval == $value)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 //Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
 function upload_item(){
