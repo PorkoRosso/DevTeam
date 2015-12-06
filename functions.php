@@ -243,7 +243,18 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			return false;
 		}
-
+		if(IsChecked('For_trade', 'B')){
+			$ForTrade = 1;
+		}
+		else{
+			$ForTrade = 0;
+		}
+		if(IsChecked('For_sale', 'A')){
+			$ForSale = 1;
+		}
+		else{
+			$ForSale = 0;
+		}
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
 			//echo "File is an image - " . $check["mime"] . ".";
@@ -295,6 +306,8 @@ function upload_item(){
 				$price = mysql_real_escape_string($price);
 				$item = trim($_POST['Item_name']);
 				$item = mysql_real_escape_string($item);
+				$ForTrade = mysql_real_escape_string($ForTrade);
+				$ForSale = mysql_real_escape_string($ForSale);
 				//This is where query will go
 				$addItem = mysql_query("INSERT INTO `Items` (user_email, Item_Name, Item_price, For_sale, For_trade) Values 
 	('$userLastName', '$userFirstName' , '$email', '$password' , '$phone');"); 
