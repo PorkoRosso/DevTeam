@@ -303,6 +303,34 @@ function upload_item(){
 		}
 	}	
 }
+/*
+http://stackoverflow.com/questions/13194322/php-regex-to-check-date-is-in-yyyy-mm-dd-format
+	$regexPass= '[A-Za-z0-9!?.]{5-13}'
+	//password must be 5-13 characters,numbers,or acceptable punctuation(!, ?, .)
+	if (preg_match($regexPass, $password)) {
+	    echo 'Passed';
+		} else {
+    	echo 'Password does not meet the requirments:'/n '-5-13 charcters'/n'-Characters, Numbers, or Acceptable Puncuation(!,?,.)';
+		}
+
+	//check email validity and format
+	$regexEmail='[colorado.edu]{12}$'
+	//email must be @colorado.edu
+	if (preg_match($regexEmail, $email)) {
+   		 echo 'Passed';
+		} else {
+    		echo 'Invalid Email:'/n'-Needs to be colorado.edu email';
+		}
+
+	//Check Phone Number
+	$regexPhone='^[1-9]{1}[0-9]{2}-[1-9]{1}[0-9]{2}-[0-9]{4}$'
+	//number must be 10 digits with area code ->maybe add functionality here for people with longer numbers from different countries		
+	if (preg_match($regexPhone, $phone)) {
+    		echo 'Passed';
+		} else {
+    		echo 'Invalid phone number please use: xxx-xxx-xxxx formatting';
+	}
+*/
 //function Display(); //will take in image path
 //function search_Item(){
 	//if match is found call Display function
