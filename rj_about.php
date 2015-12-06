@@ -27,6 +27,7 @@
 					Ralphie's List is a student only webiste for buying, selling,<br>
 				  and trading your goods or services. With only student users, you<br>
 					can trust that your transactions will be safe and convienently located.<br>
+					Sko Buffs<br>
 				</p>
 					 <br><br>
 					 <b>
