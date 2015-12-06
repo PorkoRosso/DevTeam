@@ -308,9 +308,11 @@ function upload_item(){
 				$item = mysql_real_escape_string($item);
 				$ForTrade = mysql_real_escape_string($ForTrade);
 				$ForSale = mysql_real_escape_string($ForSale);
+				$imagePath = trim($target_file);
+				$imagePath = mysql_real_escape_string($imagePath);
 				//This is where query will go
-				$addItem = mysql_query("INSERT INTO `Items` (user_email, Item_Name, Item_price, For_sale, For_trade) Values 
-	('$userLastName', '$userFirstName' , '$email', '$password' , '$phone');"); 
+				$addItem = mysql_query("INSERT INTO `Items` (user_email, Item_Name, Item_price, For_sale, For_trade, ipath) Values 
+	('$email', '$item' , '$price', '$For_sale' , '$For_trade' , 'imagePath');"); 
 			} else {
 				echo "Sorry, there was an error uploading your file.";
 			}
