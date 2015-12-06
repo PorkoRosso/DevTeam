@@ -26,8 +26,8 @@
 				Email: <br><input type ="text" name = "user_email"><br>
 				Item Name: <br><input type ="text" name = "Item_name"><br>
 				Item Price: <br><input type = "text" name = "Item_price"><br>
-				Trade: <br><input type = "checkbox" name = "For_sale"><br>
-				Sale: <br><input type = "checkbox" name = "For_trade"><br>
+				Trade: <br><input type = "checkbox" name = "For_sale" value = "A"><br>
+				Sale: <br><input type = "checkbox" name = "For_trade" value =  "B"><br>
 				<input type="submit" value="Post Item" name="submit">
 				<?
 					include 'functions.php';
