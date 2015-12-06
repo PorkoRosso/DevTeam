@@ -13,7 +13,7 @@ class functionTests extends PHPUnit_Framework_TestCase {
 	        $capabilities = array(\WebDriverCapabilityType::BROWSER_NAME => 'firefox');
 	        $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', $capabilities);
 	    }
- 	protected $url = 'http://localhost:8888/rj_user.php';/*our path to login page here*/
+ 	protected $url = 'http://localhost:8888/login.php';/*our path to login page here*/
 
     public function testCheckLogin()
     {
@@ -30,7 +30,7 @@ class functionTests extends PHPUnit_Framework_TestCase {
         $this->webDriver->getKeyboard()->sendKeys('aaabbb');
         $this->webDriver->getKeyboard()->pressKey(WebDriverKeys::ENTER);
         // checking that page title contains word 'Home'
-        $this->assertContains('Home', $this->webDriver->getTitle());
+        $this->assertContains('rj_user.php', $this->webDriver->getTitle());
     } 
     //makes sure we dont run a test if an element is not found   
 	protected function assertElementNotFound($by)
