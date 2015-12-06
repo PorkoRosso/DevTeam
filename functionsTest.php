@@ -43,23 +43,23 @@ class functionTests extends PHPUnit_Framework_TestCase {
         $this->webDriver->get($this->url2);
         //fills in info and executes a register checks that the page changes after register
 
-        //fills in accunt
+        //fills in name
         $search = $this->webDriver->findElement(WebDriverBy::name('user_first_name'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('Ralphie');
-//fills in accunt
+	//fills in last name
         $search = $this->webDriver->findElement(WebDriverBy::name('user_last_name'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('Buf');
-        //fills in accunt
+        //fills in phone
         $search = $this->webDriver->findElement(WebDriverBy::name('user_phone'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('555-666-7777');
-        //fills in accunt
+        //fills in email
         $search = $this->webDriver->findElement(WebDriverBy::name('user_email'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('aaabbb@colorado.edu');
-        //fills in accunt
+        //fills in pass
         $search = $this->webDriver->findElement(WebDriverBy::name('user_pass'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('SkoBuffs99');
