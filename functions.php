@@ -1,4 +1,7 @@
 <?php
+/** Function to check inputs of register page and store them as variables
+*  
+*/
 function check_param(){
 	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
 	//Check values initally to see if they are filled in
@@ -51,7 +54,12 @@ function check_param(){
 		Add_user($userFirstName, $userLastName, $password, $email, $phone);
 	}
 }
-
+/**Function that takes in info from Register form and adds user to databse
+* @param $userFirstName First name taken from form
+* @param $userLastName Last name taken from form
+* @param $password Password entereed from form
+* @param $phone Phone number entered from form
+*/
 function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	//check_param() //each variable will be inputed into this
 	//if everything pass intiate insert into
@@ -86,6 +94,10 @@ function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 		echo "<script type='text/javascript'>window.top.location='http://localhost:8888/login.php';</script>";
 	}
 }
+/** Function that takes in user email and password from login form and puts them in variables
+*
+*
+*/
 
 function Login(){
 	
@@ -113,7 +125,7 @@ function Login(){
 			echo "A password is required!";
 			$page = $_SERVER['PHP_SELF'];
 			$sec = "0";
-			header("Refresh: $sec; url=$page"); //Redirects to "user profile"
+			header("Refresh: $sec; url=$page"); 
 			return false;
 		}
 		
@@ -124,8 +136,12 @@ function Login(){
 	}	
 
 }
+/* Function that checks if user and password combination is in database
+* @param $email user email entered in login form
+* @param $password password entered in login form
+*/
 function Checklogin($email, $password){
-	////Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
+	//Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
 	$con=mysql_connect("localhost","root","root");
 	// Check connection
@@ -168,7 +184,11 @@ function Checklogin($email, $password){
 	
 }
 //Source: http://www.html-form-guide.com/php-form/php-form-checkbox.html
-function IsChecked($chkname,$value)
+/** Function that checks if check box in upload item form has been checked or not
+* @param $chkname name of checkbox contained in add_item.php html form
+* 
+*/
+function IsChecked($chkname)
     {
         if(!empty($_POST[$chkname]))
         {
@@ -230,13 +250,13 @@ function upload_item(){
 			header("Refresh: $sec; url=$page");
 			return false;
 		}
-		if(IsChecked('For_trade', 'B')){
+		if(IsChecked('For_trade')){
 			$ForTrade = 1;
 		}
 		else{
 			$ForTrade = 0;
 		}
-		if(IsChecked('For_sale', 'A')){
+		if(IsChecked('For_sale')){
 			$ForSale = 1;
 		}
 		else{
