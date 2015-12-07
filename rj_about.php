@@ -25,19 +25,23 @@
 			<info>
 					<b> What is Ralphie's List? </b><br>
 					<p>
-					Ralphie's List is a student only webiste for buying, selling,<br>
+					Ralphie's List is a CU student only webiste for buying, selling,<br>
 				  and trading your goods or services. With only student users, you<br>
 					can trust that your transactions will be safe and convienently located.<br>
 					Sko Buffs<br>
 				</p>
-					 <br><br>
-					 <b>
-
-
-						<?php
-							echo("This is a website</br>");
-							echo( date("l, F dS Y.") );
-						?>
+					 <br>
+					 <b> Is Ralphie's List only for CU - Boulder students? </b><br>
+					 <p>
+						 As of right now, yes. If enough interest is shown for support for<br>
+						 other universities we will consider expanding.
+						 <br><br>
+					 </p>
+					 <b> Where can I send business inquiries? </b><br>
+					 <p>
+						 All inquiries can be sent to support@ralphiesjunk.com and we will<br>
+						 get back to you as quick as possible.
+					 </p>
 			</info>
 		</section>
 	</body>
