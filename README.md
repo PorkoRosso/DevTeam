@@ -20,7 +20,7 @@ Merchant Website
   -You need to download an application that can host a server on your computer
     -We used MAMP/XAMPP/WAMP
     
-  -Go to htdocs folder inside MAMP/WXAMPP/WAMP server and paste all files located inside repository into this folder
+  -Go to htdocs folder inside MAMP/XAMPP/WAMP server and paste all files located inside repository into this folder
   
   -Power on server and go to localhost/phpmyadmin 
   
