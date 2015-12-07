@@ -22,10 +22,10 @@
 			<info>
 			<form method = "post" action = "" style="border: 3px solid #101417; background-color: #cfb87b; padding: 25px 70px 25px 70px;">
 				Username:<br>
-				<input type="text" name="user_email">
+				<input id="email" type="text" name="user_email">
 				<br>
 				Password:<br>
-				<input type="password" name="user_pass">
+				<input id="user_password" type="password" name="user_pass">
 				<br><br>
 				<input name = "go" type="submit" value="Submit">
 				<input type="submit" value="Sign Up">
