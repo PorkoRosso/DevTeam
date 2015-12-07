@@ -25,11 +25,11 @@ class functionTests extends PHPUnit_Framework_TestCase {
         //fills in info and executes a logon
        // Checklogin('aaabbb@colorado.edu', 'aaabbb');
         //fills in accunt
-        $search = $this->webDriver->findElement(WebDriverBy::name('user_email'));
+        $search = $this->webDriver->findElement(WebDriverBy::id('email'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('aaabbb@colorado.edu');
         //fills in pass
-         $search = $this->webDriver->findElement(WebDriverBy::name('user_pass'));
+         $search = $this->webDriver->findElement(WebDriverBy::id('user_password'));
 		$search->click();
         $this->webDriver->getKeyboard()->sendKeys('aaabbb');
         $this->webDriver->getKeyboard()->pressKey(WebDriverKeys::ENTER);
@@ -44,23 +44,23 @@ class functionTests extends PHPUnit_Framework_TestCase {
         //fills in info and executes a register checks that the page changes after register
 
         //fills in name
-        $search = $this->webDriver->findElement(WebDriverBy::name('user_first_name'));
+        $search = $this->webDriver->findElement(WebDriverBy::id('first_name'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('Ralphie');
 	//fills in last name
-        $search = $this->webDriver->findElement(WebDriverBy::name('user_last_name'));
+        $search = $this->webDriver->findElement(WebDriverBy::id('last_name'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('Buf');
         //fills in phone
-        $search = $this->webDriver->findElement(WebDriverBy::name('user_phone'));
+        $search = $this->webDriver->findElement(WebDriverBy::id('phone_numer'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('555-666-7777');
         //fills in email
-        $search = $this->webDriver->findElement(WebDriverBy::name('user_email'));
+        $search = $this->webDriver->findElement(WebDriverBy::id('email'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('aaabbb@colorado.edu');
         //fills in pass
-        $search = $this->webDriver->findElement(WebDriverBy::name('user_pass'));
+        $search = $this->webDriver->findElement(WebDriverBy::id('user_password'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('SkoBuffs99');
 
