@@ -13,7 +13,6 @@
 		<input type="text" class="advancedSearchTextBox" />
 		<nav>
 			<li><a href="rj_user.php">Home</a></li>
-			<li><a href="add_item.php">New Post</a></li>
 			<li><a href="rj_browse.php">Browse</a></li>
 			<li><a href="login.php">Login</a></li>
 			<li><a href="rj_about.php">About</a></li>
