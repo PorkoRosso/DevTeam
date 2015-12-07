@@ -2,4 +2,5 @@ k
 i
 :qw
 da
+:wq
 
