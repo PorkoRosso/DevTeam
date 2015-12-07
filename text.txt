@@ -1,7 +1,6 @@
 k
 i
 :qw
-da
-:wq
+dawq
 
 il
