@@ -30,7 +30,7 @@
 			<br><br>
 			E-mail:<br> <input id="email" type="text" name="user_email">
 			<br><br>
-			Password:<br> <input id="password" type="password" name="user_pass">
+			Password:<br> <input id="user_password" type="password" name="user_pass">
 			<br><br>
 			<center><input type="submit" name="submit" value="Submit"></center>
 			</form>
