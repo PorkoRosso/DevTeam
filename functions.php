@@ -1,6 +1,44 @@
 <?php
-/** Function to check inputs of register page and store them as variables
-*  
+/*! \file functions,php
+	\brief File containing all functions necessary for website to interact with database
+*/
+
+/*! \fn check_param()
+	\brief Check values in form to make sure they are all filled in. Puts information into variables:
+	 $userFirstName, $userLastName, $password, $email, and $phone
+*/
+
+/*!
+	\fn Add_user($userFirstName, $userLastName, $password, $email, $phone)
+	\brief Inserts variables taken from form into database
+	\param $userFirstName First name taken from form
+	\param $userLastName Last name taken from form
+	\param $password Password entereed from form
+	\param $phone Phone number entered from form
+*/
+
+/*!
+	\fn Login()
+	\brief Checks values in login form to make sure they have been entered and puts them into variables:
+	$email and $password
+*/
+
+/*!
+	\fn Checklogin($email, $password)
+	\brief Checks for login credentials in database
+	\param $email taken from login form
+	\param $password taken from login form
+*/
+/*!
+	\fn IsChecked($chkname)
+	\brief Returns which checkbox has been selected in upload item form
+	\param $chkname Name of the checkbox in html form
+*/
+
+/*!
+	\fn upload_item()
+	\brief Takes in information through form, including email, item name/price, item image and whether the 
+	item is for sale and uploads it to the database
 */
 function check_param(){
 	//Source: http://www.html-form-guide.com/php-form/php-login-form.html
@@ -54,12 +92,6 @@ function check_param(){
 		Add_user($userFirstName, $userLastName, $password, $email, $phone);
 	}
 }
-/**Function that takes in info from Register form and adds user to databse
-* @param $userFirstName First name taken from form
-* @param $userLastName Last name taken from form
-* @param $password Password entereed from form
-* @param $phone Phone number entered from form
-*/
 function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 	//check_param() //each variable will be inputed into this
 	//if everything pass intiate insert into
@@ -94,10 +126,6 @@ function Add_user($userFirstName, $userLastName, $password, $email, $phone){
 		echo "<script type='text/javascript'>window.top.location='http://localhost:8888/login.php';</script>";
 	}
 }
-/** Function that takes in user email and password from login form and puts them in variables
-*
-*
-*/
 
 function Login(){
 	
@@ -136,10 +164,6 @@ function Login(){
 	}	
 
 }
-/* Function that checks if user and password combination is in database
-* @param $email user email entered in login form
-* @param $password password entered in login form
-*/
 function Checklogin($email, $password){
 	//Source: http://stackoverflow.com/questions/10643626/refresh-page-after-form-submiting
 	//Source: http://stackoverflow.com/questions/5285388/mysql-check-if-username-and-password-matches-in-database
@@ -183,9 +207,6 @@ function Checklogin($email, $password){
   	}
 	
 }
-/** Function that checks if check box in upload item form has been checked or not
-* @param $chkname name of checkbox contained in add_item.php html form
-*/
 function IsChecked($chkname){
 //Source: http://www.html-form-guide.com/php-form/php-form-checkbox.html
     if(!empty($_POST[$chkname])){
@@ -195,10 +216,6 @@ function IsChecked($chkname){
        return false;
      }
 }
-
-/* Function takes in image and form information. Image is uploaded to server, file path is then uploaded to database
-* alongside information user put into form.
-*/
 function upload_item(){
 //Source: http://www.w3schools.com/php/php_file_upload.asp
 	$con=mysql_connect("localhost","root","root");
@@ -320,34 +337,34 @@ function upload_item(){
 		}
 	}	
 }
-/*
-http://stackoverflow.com/questions/13194322/php-regex-to-check-date-is-in-yyyy-mm-dd-format
-	$regexPass= '[A-Za-z0-9!?.]{5-13}'
-	//password must be 5-13 characters,numbers,or acceptable punctuation(!, ?, .)
-	if (preg_match($regexPass, $password)) {
-	    echo 'Passed';
-		} else {
-    	echo 'Password does not meet the requirments:'/n '-5-13 charcters'/n'-Characters, Numbers, or Acceptable Puncuation(!,?,.)';
-		}
+//
+//http://stackoverflow.com/questions/13194322/php-regex-to-check-date-is-in-yyyy-mm-dd-format
+//	$regexPass= '[A-Za-z0-9!?.]{5-13}'
+//	//password must be 5-13 characters,numbers,or acceptable punctuation(!, ?, .)
+//	if (preg_match($regexPass, $password)) {
+//	    echo 'Passed';
+//		} else {
+  //  	echo 'Password does not meet the requirments:'/n '-5-13 charcters'/n'-Characters, Numbers, or Acceptable Puncuation(!,?,.)';
+	//	}
 
 	//check email validity and format
-	$regexEmail='[colorado.edu]{12}$'
+//	$regexEmail='[colorado.edu]{12}$'
 	//email must be @colorado.edu
-	if (preg_match($regexEmail, $email)) {
-   		 echo 'Passed';
-		} else {
-    		echo 'Invalid Email:'/n'-Needs to be colorado.edu email';
-		}
+//	if (preg_match($regexEmail, $email)) {
+  // 		 echo 'Passed';
+	//	} else {
+    //		echo 'Invalid Email:'/n'-Needs to be colorado.edu email';
+	//	}
 
 	//Check Phone Number
-	$regexPhone='^[1-9]{1}[0-9]{2}-[1-9]{1}[0-9]{2}-[0-9]{4}$'
+	//$regexPhone='^[1-9]{1}[0-9]{2}-[1-9]{1}[0-9]{2}-[0-9]{4}$'
 	//number must be 10 digits with area code ->maybe add functionality here for people with longer numbers from different countries		
-	if (preg_match($regexPhone, $phone)) {
-    		echo 'Passed';
-		} else {
-    		echo 'Invalid phone number please use: xxx-xxx-xxxx formatting';
-	}
-*/
+	//if (preg_match($regexPhone, $phone)) {
+    //		echo 'Passed';
+	//	} else {
+    //		echo 'Invalid phone number please use: xxx-xxx-xxxx formatting';
+//	}
+
 //function Display(); //will take in image path
 //function search_Item(){
 	//if match is found call Display function
