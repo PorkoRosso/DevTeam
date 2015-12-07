@@ -17,12 +17,13 @@ Merchant Website
     
 #How to run Website:
 
-  -You need to download an application that can host a server on your computer
-    -We used MAMP/XAMPP/WAMP
+  -This guide assumes that some form of  the Apache, SQL, and PHP web stack is installed on the computer. Options for this      include MAMP/XAMPP/WAMP.
     
   -Go to htdocs folder inside MAMP/XAMPP/WAMP server and paste all files located inside repository into this folder
   
-  -Power on server and go to localhost/phpmyadmin 
+  -Power on server and go to localhost/phpmyadmin
+    -if using XAMPP you just need the apache server
+    -if using MAMP you just need to hit the power button on the application
   
   -On the left create a new database called 'CXC', click on the newly created database and import the CXC.sql file
   
