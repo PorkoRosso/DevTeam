@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<header>
-			<center><h1>CU: Ralphies List</h1></center>
+			<center><h1>Ralphie's Junk</h1></center>
 		</header>
 		<nav>
 			<li><a href="rj_user.php">Home</a></li>
