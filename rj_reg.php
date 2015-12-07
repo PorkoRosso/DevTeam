@@ -22,15 +22,15 @@
 			<info>
 
 			<form method="post" style="border: 3px solid #101417;  background-color: #cfb87b; padding: 25px 70px 25px 30px">
-			First Name: <br> <input type="text" name="user_first_name">
+			First Name: <br> <input id="first_name" type="text" name="user_first_name">
 			<br><br>
-			Last Name:<br> <input type="text" name="user_last_name">
+			Last Name:<br> <input id="last_name" type="text" name="user_last_name">
 			<br><br>
-			Phone Number:<br> <input type="text" name="user_phone">
+			Phone Number:<br> <input id="phone_number" type="text" name="user_phone">
 			<br><br>
-			E-mail:<br> <input type="text" name="user_email">
+			E-mail:<br> <input id="email" type="text" name="user_email">
 			<br><br>
-			Password:<br> <input type="password" name="user_pass">
+			Password:<br> <input id="password" type="password" name="user_pass">
 			<br><br>
 			<center><input type="submit" name="submit" value="Submit"></center>
 			</form>
