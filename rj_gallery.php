@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<header>
-			<center><h1>CU: Ralphies List</h1></center>
+			<center><h1>Ralphie's Junks</h1></center>
 		</header>
 		<input type="text" class="advancedSearchTextBox" />
 		<nav>
