@@ -32,7 +32,7 @@ Merchant Website
   
 #Potential Issues:
   
-  -If something is not working, it most likely has to deal with the root password. On MAMP, the default root password is 
+  -There might be an issue with the root password. On MAMP, the default root password is 
     "root", however on XAMPP there is no root password. To solve this you need to go into functions.php and wherever there is
     a connection made to the database, you need to change the root password. 
         -lines: 99, 170, and 221
