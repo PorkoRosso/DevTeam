@@ -11,12 +11,13 @@
 			<center><h1>CU: Ralphies List</h1></center>
 		</header>
 		<nav>
-				<li><a href="rj_user.php">Home</a></li>
-				<li><a href="rj_browse.php">Browse</a></li>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="rj_about.php">About</a></li>
-				<li><a href="rj_reg.php">Register</a></li>
-				<li><a href="http://www.google.com">Google</a></li>
+			<li><a href="rj_user.php">Home</a></li>
+			<li><a href="add_item.php">New Post</a></li>
+			<li><a href="rj_browse.php">Browse</a></li>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="rj_about.php">About</a></li>
+			<li><a href="rj_reg.php">Register</a></li>
+			<li><a href="http://www.google.com">Google</a></li>
 		</nav>
 		<section>
 			<info>
