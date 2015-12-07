@@ -183,27 +183,24 @@ function Checklogin($email, $password){
   	}
 	
 }
-//Source: http://www.html-form-guide.com/php-form/php-form-checkbox.html
 /** Function that checks if check box in upload item form has been checked or not
 * @param $chkname name of checkbox contained in add_item.php html form
-* 
 */
-function IsChecked($chkname)
-    {
-        if(!empty($_POST[$chkname]))
-        {
-            return true;
-        }
-        else{
-        	return false;
-        }
-    }
+function IsChecked($chkname){
+//Source: http://www.html-form-guide.com/php-form/php-form-checkbox.html
+    if(!empty($_POST[$chkname])){
+        return true;
+     }
+     else{
+       return false;
+     }
+}
 
-
-//Source: http://www.w3schools.com/php/php_file_upload.asp
-//Still need to add category, Trade/sale function, check for no image upload, sql query to add to database
+/* Function takes in image and form information. Image is uploaded to server, file path is then uploaded to database
+* alongside information user put into form.
+*/
 function upload_item(){
-
+//Source: http://www.w3schools.com/php/php_file_upload.asp
 	$con=mysql_connect("localhost","root","root");
 	// Check connection
 	if (mysqli_connect_errno()){
