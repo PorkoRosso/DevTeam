@@ -56,9 +56,13 @@ Merchant Website
   on files
   
 #How to run tests:
-following the instructions on http://codeception.com/quickstart more details on http://codeception.com/docs/02-GettingStarted
-1. Downwload Codeception sudo curl -LsS http://codeception.com/codecept.phar -o /usr/local/bin/codecept
-2. install codeception  php codecept.phar bootstrap
-3. Please make sure your local dev serveris running.  Put application URL into the .yml file 
-4. run the test with $ php codecept.phar run (your path to functionsTest.php)
+  -Following the instructions on http://codeception.com/quickstart more details on http://codeception.com/docs/02-GettingStarted
+
+  1. Downwload Codeception sudo curl -LsS http://codeception.com/codecept.phar -o /usr/local/bin/codecept
+
+  2. install codeception  php codecept.phar bootstrap
+
+  3. Please make sure your local dev serveris running.  Put application URL into the .yml file 
+
+  4. run the test with $ php codecept.phar run (your path to functionsTest.php)
 
