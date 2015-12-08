@@ -38,10 +38,10 @@ Merchant Website
   -There might be an issue with the root password. On MAMP, the default root password is 
     "root", however on XAMPP there is no root password. To solve this you need to go into functions.php and wherever there is
     a connection made to the database, you need to change the root password. 
-        -lines: 99, 170, and 221
+        -lines: 92, 154, and 201
         
   -The directory the image is stored in is hard coded in--to get the images stored in your computer (the server), you will 
-    need to change the directory to the one you want. (line 231 in functions.php)
+    need to change the directory to the one you want. (line 210 in functions.php)
     
   -Some local host servers make use of ports, so make sure you enter your port number if you have one. 
       -e.g localhost:8888/test.php
