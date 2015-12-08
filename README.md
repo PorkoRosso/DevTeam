@@ -2,11 +2,11 @@
 Merchant Website
 
 #Organization 
-  -All web page/function/database files as well as the autodoc file are displayed in the repository(outside the folders)
+  -All web page/function/database files as well as the autodoc file and video are displayed in the repository(outside the       folders)
   
   -Inside the folders:
   
-    -pdf: Contains part 1 and part 3 pdfs of project
+    -pdf: Contains parts 1, 3, 5 and 6 pdfs of project
     
     -pics: Contains pictures used in website
     
