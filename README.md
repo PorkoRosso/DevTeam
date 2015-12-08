@@ -22,7 +22,9 @@ Merchant Website
   -Go to htdocs folder inside MAMP/XAMPP/WAMP server and paste all files located inside repository into this folder
   
   -Power on server and go to localhost/phpmyadmin
+  
     -if using XAMPP you just need the apache server
+    
     -if using MAMP you just need to hit the power button on the application
   
   -On the left create a new database called 'CXC', click on the newly created database and import the CXC.sql file
