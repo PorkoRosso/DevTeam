@@ -5,24 +5,23 @@ include 'functions.php';
 We also will need Selenium server executable as well. You need Java installed in order to run the Selenium server. You can launch it by running this:
 java -jar selenium-server-standalone-2.37.0.jar
 php composer.phar install
-
 */
 class functionTests extends PHPUnit_Framework_TestCase {
-	/**
-	     * @var \RemoteWebDriver
-	     */
-	    protected $webDriver;
-	    public function setUp()/*starts a webpage for tests to run*/
-	    {
-	        $capabilities = array(\WebDriverCapabilityType::BROWSER_NAME => 'firefox');
-	        $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', $capabilities);
-	    }
- 	protected $url = 'http://localhost:8888/login.php';/*our path to login page here*/
-
+    /**
+         * @var \RemoteWebDriver
+         */
+        protected $webDriver;
+        public function setUp()/*starts a webpage for tests to run*/
+        {
+            $capabilities = array(\WebDriverCapabilityType::BROWSER_NAME => 'firefox');
+            $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', $capabilities);
+        }
+    protected $url = 'http://localhost:8888/login.php';/*our path to login page here*/
+    // fills in info and executes a logon
     public function testCheckLogin()
     {
         $this->webDriver->get($this->url);
-        //fills in info and executes a logon
+        
        // Checklogin('aaabbb@colorado.edu', 'aaabbb');
         //fills in accunt
         $search = $this->webDriver->findElement(WebDriverBy::id('email'));
@@ -30,24 +29,24 @@ class functionTests extends PHPUnit_Framework_TestCase {
         $this->webDriver->getKeyboard()->sendKeys('aaabbb@colorado.edu');
         //fills in pass
          $search = $this->webDriver->findElement(WebDriverBy::id('user_password'));
-		$search->click();
+        $search->click();
         $this->webDriver->getKeyboard()->sendKeys('aaabbb');
         $this->webDriver->getKeyboard()->pressKey(WebDriverKeys::ENTER);
         // checking that page title contains word 'Home'
         $this->assertContains('rj_user.php', $this->webDriver->getTitle());
     } 
-
-    protected $url2 = 'http://localhost:8888/rj_reg.php';/*our path to login page here*/
+    protected $url2 = 'http://localhost:8888/rj_reg.php';
+    /*our path to login page here*/
+    // fills in info and executes a register checks that the page changes after register
     public function testCheckSignUp()
     {
         $this->webDriver->get($this->url2);
-        //fills in info and executes a register checks that the page changes after register
-
+        
         //fills in name
         $search = $this->webDriver->findElement(WebDriverBy::id('first_name'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('Ralphie');
-	//fills in last name
+       //fills in last name
         $search = $this->webDriver->findElement(WebDriverBy::id('last_name'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('Buf');
@@ -63,14 +62,12 @@ class functionTests extends PHPUnit_Framework_TestCase {
         $search = $this->webDriver->findElement(WebDriverBy::id('user_password'));
         $search->click();
         $this->webDriver->getKeyboard()->sendKeys('SkoBuffs99');
-
         $this->webDriver->getKeyboard()->pressKey(WebDriverKeys::ENTER);
         // checking that page title contains word 'Home'
         $this->assertContains('login.php', $this->webDriver->getTitle());
     } 
-
     //makes sure we dont run a test if an element is not found   
-	protected function assertElementNotFound($by)
+    protected function assertElementNotFound($by)
     {
         $els = $this->webDriver->findElements($by);
         if (count($els)) {
@@ -80,7 +77,7 @@ class functionTests extends PHPUnit_Framework_TestCase {
         $this->assertTrue(true);
         
     }
-	public function tearDown()//takes page down after test
+    public function tearDown()//takes page down after test
     {
         $this->webDriver->quit();
     }
