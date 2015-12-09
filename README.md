@@ -33,6 +33,8 @@ Merchant Website
   
   -From here you will be able to manuever throughout the website.
   
+  -You can create your account on the register page, and directly login afterwards. After that you can upload an item to the   website. All user information and Item information gets stored on the database.  
+  
 #Potential Issues:
   
   -There might be an issue with the root password. On MAMP, the default root password is 
